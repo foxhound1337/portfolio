@@ -5,9 +5,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Freelancer - Start Bootstrap Theme</title>
+        <title>Castillo Contracting- For all your home repair and maintenance needs</title>
         <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <link rel="icon" type="image/x-icon" src="assets/img/avataaars.jpeg" />
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
         <!-- Google fonts-->
@@ -27,6 +27,7 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto">
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#reviews">Reviews</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#portfolio">Portfolio</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#about">About</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#contact">Contact</a></li>
@@ -35,14 +36,14 @@
             </div>
         </nav>
         <!-- Masthead-->
-        <header class="masthead bg-primary text-white text-center">
+        <header class="masthead text-center">
             <div class="container d-flex align-items-center flex-column">
                 <!-- Masthead Avatar Image-->
                 <img class="masthead-avatar mb-5" src="assets/img/avataaars.jpeg" alt="..." />
                 <!-- Masthead Heading-->
-                <h1 class="masthead-heading text-uppercase mb-0">Nick Castillo</h1>
+                <h1 class="masthead-heading text-uppercase text-secondary mb-0">Nick Castillo</h1>
                 <!-- Icon Divider-->
-                <div class="divider-custom divider-light">
+                <div class="divider-custom">
                     <div class="divider-custom-line"></div>
                     <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
                     <div class="divider-custom-line"></div>
@@ -51,6 +52,143 @@
                 <p class="masthead-subheading font-weight-light mb-0">Engineer-Designer-Developer</p>
             </div>
         </header>
+        <!-- Reviews Section-->
+<section class="page-section bg-primary text-white mb-0" id="reviews">
+    <div class="container">
+        <!-- Reviews Section Heading-->
+        <h2 class="page-section-heading text-center text-uppercase text-white">Reviews</h2>
+        <!-- Icon Divider-->
+        <div class="divider-custom divider-light">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+            <div class="divider-custom-line"></div>
+        </div>
+        
+        <!-- TaskRabbit Badge -->
+        <div class="text-center mb-4">
+            <span class="badge bg-light text-primary px-4 py-2">
+                <a href="https://www.taskrabbit.com/profile/nicocastillo/" target="_blank"><strong>TaskRabbit</strong> Verified Reviews</a>
+            </span>
+            <div class="mt-2">
+                <span class="me-2"><strong id="reviewCount">47</strong> reviews</span>
+                <i class="fas fa-star text-warning"></i>
+                <i class="fas fa-star text-warning"></i>
+                <i class="fas fa-star text-warning"></i>
+                <i class="fas fa-star text-warning"></i>
+                <i class="fas fa-star text-warning"></i>
+                <span class="ms-2"><strong>5.0</strong> out of 5</span>
+            </div>
+        </div>
+
+        <!-- Scrolling Reviews Container -->
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="scroll-container">
+                    <div class="reviews-scroll" id="reviewsScroll">
+                        <!-- Reviews will be dynamically inserted here -->
+                    </div>
+                </div>
+                <p class="text-center mt-3 small">
+                    <em>Hover to pause scrolling</em>
+                </p>
+                
+                <!-- Call to Action Button -->
+                <div class="text-center mt-4">
+                    <a href="https://www.taskrabbit.com/profile/nicocastillo/" 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       class="btn btn-light btn-lg">
+                        View Full Profile on TaskRabbit →
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    /* Scroll Container - The Window */
+    .scroll-container {
+        height: 500px;
+        overflow: hidden;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 15px;
+        padding: 20px;
+    }
+    
+    /* Scrolling Animation */
+    .reviews-scroll {
+        animation: scroll 185s linear infinite;
+    }
+    
+    /* Pause on Hover */
+    .reviews-scroll:hover {
+        animation-play-state: paused;
+    }
+    
+    /* Animation Definition */
+    @keyframes scroll {
+        0% {
+            transform: translateY(0);
+        }
+        100% {
+            transform: translateY(-50%);
+        }
+    }
+    
+    /* Individual Review Card */
+    .review-card {
+        background: rgba(255, 255, 255, 0.1);
+        border-left: 4px solid #ffc107;
+        border-radius: 8px;
+        padding: 20px;
+        margin-bottom: 20px;
+        transition: transform 0.3s ease;
+    }
+    
+    .review-card:hover {
+        transform: translateX(5px);
+        background: rgba(255, 255, 255, 0.15);
+    }
+    
+    .review-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: start;
+        margin-bottom: 15px;
+    }
+    
+    .reviewer-name {
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+    
+    .review-stars {
+        color: #ffc107;
+        margin-bottom: 5px;
+    }
+    
+    .review-date {
+        font-size: 0.85rem;
+        opacity: 0.7;
+    }
+    
+    .verified-badge {
+        background: #ffc107;
+        color: #1e3a8a;
+        padding: 4px 12px;
+        border-radius: 20px;
+        font-size: 0.75rem;
+        font-weight: 600;
+    }
+    
+    .review-text {
+        line-height: 1.6;
+    }
+</style>
+
+<script src="js/reviews.js"></script>
+
         <!-- Portfolio Section-->
         <section class="page-section portfolio" id="portfolio">
             <div class="container">
@@ -138,12 +276,12 @@
                     <div class="divider-custom-line"></div>
                 </div>
                 <!-- About Section Content-->
-                <div class="row">
-                    <div class="me-auto"><p class="lead" style="text-indent: 40px;">My name is Nick Castillo, and I am an engineer with a passion for blending hands-on technical work and programming to create practical solutions. I am a self-taught programmer with experience in Expo, React Native, HTML, and C++, and my main interests include robotics and artificial intelligence. My long-term aim is to apply these skills toward advancing renewable energy and sustainability.
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 col-xl-7"><p class="lead" style="text-indent: 40px;">My name is Nick Castillo, and I am an engineer with a passion for blending hands-on technical work and programming to create practical solutions. I am a self-taught programmer with experience in Expo, React Native, HTML, and C++, and my main interests include robotics and artificial intelligence. My long-term aim is to apply these skills toward advancing renewable energy and sustainability.
                    </br></br>
                     </p>
                    <p class="lead" style="text-indent: 40px;">
-                        I bring a unique blend of hands-on technical skills and programming expertise. With over eight years of experience in electrical, plumbing, and handyman work, I’ve developed a knack for solving problems quickly and effectively—whether that means crafting an immediate fix or developing a long-term solution. I believe practical problem-solving is essential, since overthinking can often delay progress and lead to significant costs in real-world projects.
+                        I bring a unique blend of hands-on technical skills and programming expertise. With over eight years of experience in electrical, plumbing, and handyman work, I've developed a knack for solving problems quickly and effectively—whether that means crafting an immediate fix or developing a long-term solution. I believe practical problem-solving is essential, since overthinking can often delay progress and lead to significant costs in real-world projects.
                     </br></br>
                    </p>
                    <p class="lead" style="text-indent: 40px;">
@@ -161,74 +299,42 @@
         <!-- Contact Section-->
         <section class="page-section" id="contact">
             <div class="container">
-                <!-- Contact Section Heading-->
                 <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Contact Me</h2>
-                <!-- Icon Divider-->
                 <div class="divider-custom">
                     <div class="divider-custom-line"></div>
                     <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
                     <div class="divider-custom-line"></div>
                 </div>
-                <!-- Contact Section Form-->
                 <div class="row justify-content-center">
                     <div class="col-lg-8 col-xl-7">
-                        <!-- * * * * * * * * * * * * * * *-->
-                        <!-- * * SB Forms Contact Form * *-->
-                        <!-- * * * * * * * * * * * * * * *-->
-                        <!-- This form is pre-integrated with SB Forms.-->
-                        <!-- To make this form functional, sign up at-->
-                        <!-- https://startbootstrap.com/solution/contact-forms-->
-                        <!-- to get an API token!-->
-                        <form id="contactForm" data-sb-form-api-token="API_TOKEN">
-                            <!-- Name input-->
+                        <!-- WEB3FORMS - 100% FREE, NO CREDIT CARD -->
+                        <form action="https://api.web3forms.com/submit" method="POST">
+                            <input type="hidden" name="access_key" value="279f6467-5d4d-43f3-881b-d7a1e206b664">
+                            
                             <div class="form-floating mb-3">
-                                <input class="form-control" id="name" type="text" placeholder="Enter your name..." data-sb-validations="required" />
+                                <input class="form-control" type="text" name="name" placeholder="Enter your name..." required />
                                 <label for="name">Full name</label>
-                                <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
                             </div>
-                            <!-- Email address input-->
                             <div class="form-floating mb-3">
-                                <input class="form-control" id="email" type="email" placeholder="name@example.com" data-sb-validations="required,email" />
+                                <input class="form-control" type="email" name="email" placeholder="name@example.com" required />
                                 <label for="email">Email address</label>
-                                <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
-                                <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
                             </div>
-                            <!-- Phone number input-->
                             <div class="form-floating mb-3">
-                                <input class="form-control" id="phone" type="tel" placeholder="(123) 456-7890" data-sb-validations="required" />
+                                <input class="form-control" type="tel" name="phone" placeholder="(123) 456-7890" required />
                                 <label for="phone">Phone number</label>
-                                <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div>
                             </div>
-                            <!-- Message input-->
                             <div class="form-floating mb-3">
-                                <textarea class="form-control" id="message" type="text" placeholder="Enter your message here..." style="height: 10rem" data-sb-validations="required"></textarea>
+                                <textarea class="form-control" name="message" placeholder="Enter your message here..." style="height: 10rem" required></textarea>
                                 <label for="message">Message</label>
-                                <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
                             </div>
-                            <!-- Submit success message-->
-                            <!---->
-                            <!-- This is what your users will see when the form-->
-                            <!-- has successfully submitted-->
-                            <div class="d-none" id="submitSuccessMessage">
-                                <div class="text-center mb-3">
-                                    <div class="fw-bolder">Form submission successful!</div>
-                                    To activate this form, sign up at
-                                    <br />
-                                    <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
-                                </div>
-                            </div>
-                            <!-- Submit error message-->
-                            <!---->
-                            <!-- This is what your users will see when there is-->
-                            <!-- an error submitting the form-->
-                            <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
-                            <!-- Submit Button-->
-                            <button class="btn btn-primary btn-xl disabled" id="submitButton" type="submit">Send</button>
+                            
+                            <button class="btn btn-primary btn-xl" type="submit">Send</button>
                         </form>
                     </div>
                 </div>
             </div>
         </section>
+
         <!-- Footer-->
         <footer class="footer text-center">
             <div class="container">

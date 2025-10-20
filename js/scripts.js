@@ -51,4 +51,56 @@ window.addEventListener('DOMContentLoaded', event => {
         });
     });
 
+    // Reviews functionality
+    const reviews = [
+        {
+            name: "Client Name",
+            rating: 5,
+            text: "Copy the exact review text from your TaskRabbit profile here. Keep the original wording to maintain authenticity.",
+            date: "Date from review (e.g., '2 weeks ago')"
+        },
+        {
+            name: "Another Client",
+            rating: 5,
+            text: "Another review text goes here. Make sure to copy it exactly as it appears on TaskRabbit.",
+            date: "1 month ago"
+        },
+        {
+            name: "Third Client",
+            rating: 5,
+            text: "Add as many reviews as you want to showcase. The more the better for the scrolling effect!",
+            date: "3 weeks ago"
+        },
+        // Add more reviews here...
+    ];
+
+    function generateStars(rating) {
+        return '★'.repeat(rating) + '☆'.repeat(5 - rating);
+    }
+
+    function createReviewCard(review) {
+        return `
+            <div class="review-card">
+                <div class="review-header">
+                    <div class="reviewer-info">
+                        <h5>${review.name}</h5>
+                        <div class="stars">${generateStars(review.rating)}</div>
+                        <div class="review-date">${review.date}</div>
+                    </div>
+                    <div class="verified-badge">✓ Verified</div>
+                </div>
+                <p class="review-text">"${review.text}"</p>
+            </div>
+        `;
+    }
+
+    // Generate and display reviews
+    const reviewsHTML = reviews.map(createReviewCard).join('');
+    const scrollContainer = document.getElementById('reviewsScroll');
+    
+    if (scrollContainer) {
+        // Duplicate reviews for seamless infinite scroll
+        scrollContainer.innerHTML = reviewsHTML + reviewsHTML;
+    }
+
 });
