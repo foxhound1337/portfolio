@@ -1,106 +1,109 @@
-/*!
-* Start Bootstrap - Freelancer v7.0.7 (https://startbootstrap.com/theme/freelancer)
-* Copyright 2013-2023 Start Bootstrap
-* Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-freelancer/blob/master/LICENSE)
-*/
-//
-// Scripts
-// 
+// Core theme JavaScript for portfolio website
 
-window.addEventListener('DOMContentLoaded', event => {
-
-    // Navbar shrink function
-    var navbarShrink = function () {
-        const navbarCollapsible = document.body.querySelector('#mainNav');
-        if (!navbarCollapsible) {
-            return;
-        }
-        if (window.scrollY === 0) {
-            navbarCollapsible.classList.remove('navbar-shrink')
-        } else {
-            navbarCollapsible.classList.add('navbar-shrink')
-        }
-
-    };
-
-    // Shrink the navbar 
-    navbarShrink();
-
-    // Shrink the navbar when page is scrolled
-    document.addEventListener('scroll', navbarShrink);
-
-    // Activate Bootstrap scrollspy on the main nav element
-    const mainNav = document.body.querySelector('#mainNav');
-    if (mainNav) {
-        new bootstrap.ScrollSpy(document.body, {
-            target: '#mainNav',
-            rootMargin: '0px 0px -40%',
-        });
-    };
-
-    // Collapse responsive navbar when toggler is visible
-    const navbarToggler = document.body.querySelector('.navbar-toggler');
-    const responsiveNavItems = [].slice.call(
-        document.querySelectorAll('#navbarResponsive .nav-link')
-    );
-    responsiveNavItems.map(function (responsiveNavItem) {
-        responsiveNavItem.addEventListener('click', () => {
-            if (window.getComputedStyle(navbarToggler).display !== 'none') {
-                navbarToggler.click();
+// Smooth scrolling for navigation links
+document.addEventListener('DOMContentLoaded', function() {
+    // Add smooth scrolling to all anchor links
+    const links = document.querySelectorAll('a[href^="#"]');
+    
+    links.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
             }
         });
     });
-
-    // Reviews functionality
-    const reviews = [
-        {
-            name: "Client Name",
-            rating: 5,
-            text: "Copy the exact review text from your TaskRabbit profile here. Keep the original wording to maintain authenticity.",
-            date: "Date from review (e.g., '2 weeks ago')"
-        },
-        {
-            name: "Another Client",
-            rating: 5,
-            text: "Another review text goes here. Make sure to copy it exactly as it appears on TaskRabbit.",
-            date: "1 month ago"
-        },
-        {
-            name: "Third Client",
-            rating: 5,
-            text: "Add as many reviews as you want to showcase. The more the better for the scrolling effect!",
-            date: "3 weeks ago"
-        },
-        // Add more reviews here...
-    ];
-
-    function generateStars(rating) {
-        return '★'.repeat(rating) + '☆'.repeat(5 - rating);
-    }
-
-    function createReviewCard(review) {
-        return `
-            <div class="review-card">
-                <div class="review-header">
-                    <div class="reviewer-info">
-                        <h5>${review.name}</h5>
-                        <div class="stars">${generateStars(review.rating)}</div>
-                        <div class="review-date">${review.date}</div>
-                    </div>
-                    <div class="verified-badge">✓ Verified</div>
-                </div>
-                <p class="review-text">"${review.text}"</p>
-            </div>
-        `;
-    }
-
-    // Generate and display reviews
-    const reviewsHTML = reviews.map(createReviewCard).join('');
-    const scrollContainer = document.getElementById('reviewsScroll');
     
-    if (scrollContainer) {
-        // Duplicate reviews for seamless infinite scroll
-        scrollContainer.innerHTML = reviewsHTML + reviewsHTML;
+    // Add active class to navigation items based on scroll position
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+    
+    function updateActiveNav() {
+        let current = '';
+        
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            
+            if (window.scrollY >= (sectionTop - 200)) {
+                current = section.getAttribute('id');
+            }
+        });
+        
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === '#' + current) {
+                link.classList.add('active');
+            }
+        });
     }
+    
+    window.addEventListener('scroll', updateActiveNav);
+    updateActiveNav(); // Call once on load
+});
 
+// Portfolio modal functionality
+document.addEventListener('DOMContentLoaded', function() {
+    // Close modal when clicking outside
+    const modals = document.querySelectorAll('.portfolio-modal');
+    
+    modals.forEach(modal => {
+        modal.addEventListener('click', function(e) {
+            if (e.target === this) {
+                const closeBtn = this.querySelector('.btn-close');
+                if (closeBtn) {
+                    closeBtn.click();
+                }
+            }
+        });
+    });
+});
+
+// Form submission handling
+document.addEventListener('DOMContentLoaded', function() {
+    const contactForm = document.querySelector('form[action*="web3forms"]');
+    
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            // Add loading state to submit button
+            const submitBtn = this.querySelector('button[type="submit"]');
+            if (submitBtn) {
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+                
+                // Re-enable button after 5 seconds as fallback
+                setTimeout(() => {
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = 'Send';
+                }, 5000);
+            }
+        });
+    }
+});
+
+// Add animation classes when elements come into view
+document.addEventListener('DOMContentLoaded', function() {
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+    
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate-in');
+            }
+        });
+    }, observerOptions);
+    
+    // Observe elements that should animate in
+    const animateElements = document.querySelectorAll('.portfolio-item, .review-card, .masthead-heading');
+    animateElements.forEach(el => observer.observe(el));
 });
