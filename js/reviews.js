@@ -2,6 +2,102 @@
 
 const reviews = [
     {
+        name: "Yi Z.",
+        rating: 5,
+        text: "Nico arrived on time and quickly recognized the issues around our kitchen sink, disposal and pipes. He completed the job very efficiently even by including grabbing a new, matching disposal at a local store. Now our new disposal is working perfectly with no more issues. Thanks Nico!",
+        date: "April 25, 2022"
+    },
+    {
+        name: "Omar S.",
+        rating: 5,
+        text: "Will definitely hire again! He was able to change out my faucet very easily - he worked quickly and cleanly. Great to chat with as well!",
+        date: "April 7, 2022"
+    },
+    {
+        name: "Josh R.",
+        rating: 5,
+        text: "Great work! Showed up on time and fixed everything on my list quickly.",
+        date: "March 9, 2022"
+    },
+    {
+        name: "Alanna N.",
+        rating: 5,
+        text: "He was on time, professional and completed the job perfectly! Will definitely use Nico again",
+        date: "March 7, 2022"
+    },
+    {
+        name: "Jeremy A.",
+        rating: 5,
+        text: "",
+        date: "December 6, 2021"
+    },
+    {
+        name: "Elle Y.",
+        rating: 5,
+        text: "Great customer service and very efficient. Will definitely request Nico again to help me with other tasks. Thanks again!",
+        date: "November 15, 2021"
+    },
+    {
+        name: "Carlos C.",
+        rating: 5,
+        text: "Great tasker! Installed 4 new faucets in a very timely manner. Clean and efficient. Will definitely use again!",
+        date: "November 12, 2021"
+    },
+    {
+        name: "Shivram S.",
+        rating: 5,
+        text: "Nico did very well to identify the cause of my leaking faucet and get the right parts and did a professional job of installation. Highly recommended.",
+        date: "October 31, 2021"
+    },
+    {
+        name: "Jason D.",
+        rating: 5,
+        text: "Nico was outstanding. He got the job done and all the while kept me informed about how things were going, and he is a great person as well. Truly appreciate his help and his kind personality! I would not hesitate to hire Nico again!",
+        date: "September 19, 2021"
+    },
+    {
+        name: "Cathy C.",
+        rating: 5,
+        text: "Nico helped me fix the leaking under the dishwasher and he fixed the dishwasher too. He is on time and very friendly.",
+        date: "September 19, 2021"
+    },
+    {
+        name: "Rob H.",
+        rating: 5,
+        text: "Nico was prompt, thorough, helpful, and friendly. He was flexible when I had an unexpected schedule change too.",
+        date: "November 7, 2022"
+    },
+    {
+        name: "Daniel M.",
+        rating: 5,
+        text: "",
+        date: "November 6, 2022"
+    },
+    {
+        name: "Bethany G.",
+        rating: 5,
+        text: "Nico went above and beyond and did a fantastic job. Would 110% hire him again!",
+        date: "November 4, 2022"
+    },
+    {
+        name: "pamela m.",
+        rating: 5,
+        text: "Nico was outstandingly! He arrived right at the agreed time, was kind, friendly and able to repair my toilet issue in mins! He explained the issue at hand and with patience resolved the problem. Nico saved me money by not pushing any new or unnecessary parts. Will definitely choose Nico again!",
+        date: "October 25, 2022"
+    },
+    {
+        name: "Mara G.",
+        rating: 5,
+        text: "",
+        date: "September 3, 2022"
+    },
+    {
+        name: "Brecon R.",
+        rating: 5,
+        text: "Nico was efficient and knowledgeable. He was able to easily complete both projects we had for him.",
+        date: "July 7, 2022"
+    },
+    {
         name: "Jake H.",
         rating: 4,
         text: "",
@@ -62,42 +158,6 @@ const reviews = [
         date: "November 29, 2022"
     },
     {
-        name: "Rob H.",
-        rating: 5,
-        text: "Nick was prompt, thorough, helpful, and friendly. He was flexible when I had an unexpected schedule change too.",
-        date: "November 7, 2022"
-    },
-    {
-        name: "Daniel M.",
-        rating: 5,
-        text: "",
-        date: "November 6, 2022"
-    },
-    {
-        name: "Bethany G.",
-        rating: 5,
-        text: "Nick went above and beyond and did a fantastic job. Would 110% hire him again!",
-        date: "November 4, 2022"
-    },
-    {
-        name: "pamela m.",
-        rating: 5,
-        text: "Nick was outstandingly! He arrived right at the agreed time, was kind, friendly and able to repair my toilet issue in mins! He explained the issue at hand and with patience resolved the problem. Nick saved me money by not pushing any new or unnecessary parts. Will definitely choose Nick again!",
-        date: "October 25, 2022"
-    },
-    {
-        name: "Mara G.",
-        rating: 5,
-        text: "",
-        date: "September 3, 2022"
-    },
-    {
-        name: "Brecon R.",
-        rating: 5,
-        text: "Nick was efficient and knowledgeable. He was able to easily complete both projects we had for him.",
-        date: "July 7, 2022"
-    },
-    {
         name: "Arthur R.",
         rating: 5,
         text: "",
@@ -120,66 +180,6 @@ const reviews = [
         rating: 5,
         text: "",
         date: "April 30, 2022"
-    },
-    {
-        name: "Yi Z.",
-        rating: 5,
-        text: "Nico arrived on time and quickly recognized the issues around our kitchen sink, disposal and pipes. He completed the job very efficiently even by including grabbing a new, matching disposal at a local store. Now our new disposal is working perfectly with no more issues. Thanks Nico!",
-        date: "April 25, 2022"
-    },
-    {
-        name: "Omar S.",
-        rating: 5,
-        text: "Will definitely hire again! He was able to change out my faucet very easily - he worked quickly and cleanly. Great to chat with as well!",
-        date: "April 7, 2022"
-    },
-    {
-        name: "Josh R.",
-        rating: 5,
-        text: "Great work! Showed up on time and fixed everything on my list quickly.",
-        date: "March 9, 2022"
-    },
-    {
-        name: "Alanna N.",
-        rating: 5,
-        text: "He was on time, professional and completed the job perfectly! Will definitely use Nico again",
-        date: "March 7, 2022"
-    },
-    {
-        name: "Jeremy A.",
-        rating: 5,
-        text: "",
-        date: "December 6, 2021"
-    },
-    {
-        name: "Elle Y.",
-        rating: 5,
-        text: "Great customer service and very efficient. Will definitely request Nico again to help me with other tasks. Thanks again!",
-        date: "November 15, 2021"
-    },
-    {
-        name: "Carlos C.",
-        rating: 5,
-        text: "Great tasker! Installed 4 new faucets in a very timely manner. Clean and efficient. Will definitely use again!",
-        date: "November 12, 2021"
-    },
-    {
-        name: "Shivram S.",
-        rating: 5,
-        text: "Nico did very well to identify the cause of my leaking faucet and get the right parts and did a professional job of installation. Highly recommended.",
-        date: "October 31, 2021"
-    },
-    {
-        name: "Jason D.",
-        rating: 5,
-        text: "Nico was outstanding. He got the job done and all the while kept me informed about how things were going, and he is a great person as well. Truly appreciate his help and his kind personality! I would not hesitate to hire Nico again!",
-        date: "September 19, 2021"
-    },
-    {
-        name: "Cathy C.",
-        rating: 5,
-        text: "Nico helped me fix the leaking under the dishwasher and he fixed the dishwasher too. He is on time and very friendly.",
-        date: "September 19, 2021"
     },
     {
         name: "Daniel K.",
@@ -556,13 +556,13 @@ const reviews = [
     {
         name: "Lawrence J.",
         rating: 5,
-        text: "Nick is efficient, flexible and friendly. Did a great job. Will definitely use him again.",
+        text: "Nico is efficient, flexible and friendly. Did a great job. Will definitely use him again.",
         date: "April 23, 2023"
     },
     {
         name: "Courtney N.",
         rating: 5,
-        text: "Nick is awesome! Quickly finished several projects around my condo. He's very personable and fun to have around as well. Am a repeat customer and will continue calling him when I need something done right.",
+        text: "Nico is awesome! Quickly finished several projects around my condo. He's very personable and fun to have around as well. Am a repeat customer and will continue calling him when I need something done right.",
         date: "November 2, 2022"
     },
     {
